@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "210613747444",
+    "project_id": "flutterflexmen-35373",
+    "storage_bucket": "flutterflexmen-35373.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210613747444:android:2dfa0bcd4cdf900072a8a1",
+        "android_client_info": {
+          "package_name": "com.example.flutterflexmenv2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBIoC36b55w-G5JyfR7I9ykPZ6jrI0HTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
