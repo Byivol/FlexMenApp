@@ -16,7 +16,7 @@ Future<bool> unsubscribeFromLesson(String lessonId, String userId) async {
   await registrationDoc.reference.delete();
   final lessonRef = firestore.collection('lessons').doc(lessonId);
   final lessonSnapshot = await lessonRef.get();
-  final availableSeats = (lessonSnapshot.data()?['availableSeats'] ?? 0) + 1;
+  final availableSeats = (lessonSnapshot.data()?['ailableseats'] ?? 0) + 1;
 
   await lessonRef.update({'availableSeats': availableSeats});
   return true;
