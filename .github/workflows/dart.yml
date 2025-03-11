@@ -8,14 +8,14 @@ jobs:
     name: 🎉 iOS Build_1
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@v3
+      - name: Setup Flutter SDK
+        uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
-          architecture: x64
+          channel: stable
+          version: 3.24.3
+
       - run: flutter pub get
-      
 
       - run: pod repo update
         working-directory: ios
@@ -25,7 +25,7 @@ jobs:
       - run: mkdir Payload
         working-directory: build/ios/iphoneos
 
-      - run: mv Runner.app/ Payload
+      - run: mv Runner.app Payload
         working-directory: build/ios/iphoneos
 
       - name: Zip output
