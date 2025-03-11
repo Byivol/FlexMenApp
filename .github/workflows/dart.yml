@@ -8,8 +8,9 @@ jobs:
     name: 🎉 iOS Build_1
     runs-on: macos-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Setup Flutter SDK
-        uses: flutter-actions/setup-flutter@v4
+        uses: subosito/flutter-action@v2
         with:
           channel: stable
           version: 3.24.3
