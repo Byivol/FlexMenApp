@@ -8,13 +8,11 @@ jobs:
     name: 🎉 iOS Build_1
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Flutter 3.24.3
-        run: |
-          git clone https://github.com/flutter/flutter.git --depth 1 --branch 3.24.3 ~/flutter
-          echo "$HOME/flutter/bin" >> $GITHUB_PATH
-          flutter --version
+      - name: Setup Flutter SDK
+        uses: flutter-actions/setup-flutter@v4
+        with:
+          channel: stable
+          version: 3.5.3
 
       - run: flutter pub get
 
