@@ -86,9 +86,8 @@ class PhoneAuthScreenState extends State<PhoneAuthScreen> {
         showDialog(
           barrierDismissible: false,
           context: context,
-          builder:
-              (BuildContext context) =>
-                  Center(child: CircularProgressIndicator.adaptive()),
+          builder: (BuildContext context) =>
+              Center(child: CircularProgressIndicator.adaptive()),
         );
         _isLoading = true;
       });
@@ -109,11 +108,10 @@ class PhoneAuthScreenState extends State<PhoneAuthScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder:
-                    (context) => PhoneVerifyScreen(
-                      verificationId: verificationId,
-                      phoneNumber: _phoneNumberController.text,
-                    ),
+                builder: (context) => PhoneVerifyScreen(
+                  verificationId: verificationId,
+                  phoneNumber: _phoneNumberController.text,
+                ),
               ),
             );
           },
@@ -141,10 +139,6 @@ class PhoneAuthScreenState extends State<PhoneAuthScreen> {
             _isLoading = false;
           }
         });
-
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text("Произошла ошибка: $e")));
       }
     }
   }
