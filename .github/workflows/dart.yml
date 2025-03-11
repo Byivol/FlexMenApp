@@ -7,13 +7,19 @@ jobs:
   build-ios:
     name: 🎉 iOS Build_1
     runs-on: macos-latest
+
     steps:
       - uses: actions/checkout@v3
       - name: Setup Flutter SDK
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          version: 3.24.3
+          version: 3.5.3
+
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: '3.5.3'
 
       - run: flutter pub get
 
