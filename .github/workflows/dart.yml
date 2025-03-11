@@ -10,12 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.5.3'
-          architecture: x64
+      - name: Install Flutter 3.5.3
+        run: |
+          git clone https://github.com/flutter/flutter.git --depth 1 --branch 3.5.3 ~/flutter
+          echo "$HOME/flutter/bin" >> $GITHUB_PATH
+          flutter --version
+
       - run: flutter pub get
-      
 
       - run: pod repo update
         working-directory: ios
@@ -25,7 +26,7 @@ jobs:
       - run: mkdir Payload
         working-directory: build/ios/iphoneos
 
-      - run: mv Runner.app/ Payload
+      - run: mv Runner.app Payload
         working-directory: build/ios/iphoneos
 
       - name: Zip output
